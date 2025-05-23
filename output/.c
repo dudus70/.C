@@ -15,9 +15,12 @@ int numerogrande = rand();
 int numerosecreto = numerogrande % 100;
 int chute;
 int tentativas = 1;
-double pontos = 1000;
+float pontos = 1000;
+
 
 int acertou = 0;
+float total = 0;
+
 
 int nivel;
 printf("Qual o nivel de dificuldade? \n");
@@ -67,8 +70,8 @@ for(int i = 1; i <=numerodetentativas; i++) {
 
     tentativas++;
 
-    double pontoperdidos = abs(tentativas*35);
-    pontos = pontos - pontoperdidos;
+    float pontoperdidos = ((tentativas-1)*50);
+    total = pontos - pontoperdidos;
 
 }
 
@@ -78,7 +81,7 @@ printf("Fim de jogo! \n");
 if(acertou) {
     printf("Voce ganhou!! \n");
     printf("Voce acertou em %d tentativas! \n", tentativas);
-    printf("Total de pontos: %.1f\n", pontos);  
+    printf("Total de pontos: %.1f\n", total);  
 }
 else {
     printf("Voce perdeu! Tente de novo! \n");
